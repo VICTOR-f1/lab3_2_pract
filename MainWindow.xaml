@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp3._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas>
+        <Menu  Background="AliceBlue">
+            <MenuItem Header="                _Открыть" Height="32" Width="155">
+                <MenuItem Header="Цвет" >
+                    <ListBox>
+                        <ListBoxItem MouseEnter="ListBoxItem_MouseEnter" Content="Синий"/>
+                        <ListBoxItem  MouseEnter="ListBoxItem_MouseEnter_1" Content="Красный"/>
+                        <ListBoxItem MouseEnter="ListBoxItem_MouseEnter_2" Content="зеленый" />
+                    </ListBox>
+                </MenuItem>
+
+                <MenuItem Header="Режим">
+                    <MenuItem MouseLeave="MenuItem_MouseLeave" >
+                        <RadioButton Click="rb1_Click" Content="Рисование" x:Name="RadioBitton1"/>
+                        <RadioButton Click="rb2_Click" Content="Удаление" x:Name="RadioBitton2"/>
+                        <RadioButton Click="rb3_Click" Content="Редактирование" x:Name="RadioBitton3"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Размер">
+                    <Slider  x:Name="slid" MouseLeave="Slider_MouseLeave" Width="110" Minimum="10" Maximum="100"  />
+                </MenuItem>
+            </MenuItem>
+
+
+        </Menu>
+        <InkCanvas Background="BlanchedAlmond" Name="objectRisovanie" Height="381" Canvas.Top="38" Width="792">
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes Color="Black" Height="10" Width="1"/>
+            </InkCanvas.DefaultDrawingAttributes>
+        </InkCanvas>
+        
+    </Canvas>
+</Window>
